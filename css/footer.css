@@ -1,0 +1,12 @@
+/* ============================================================
+   css/footer.css → Pie de página
+   ============================================================ */
+.footer { border-top: 1px solid var(--borde); background: var(--superficie); padding: 2.5rem 1.5rem 1.5rem; margin-top: 3rem; }
+.footer__contenido { max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; align-items: center; }
+.footer__nombre { font-weight: 700; font-size: 1.15rem; margin: 0; }
+.footer__sub { color: var(--texto-suave); font-size: .9rem; margin: .2rem 0 0; }
+.footer__redes { list-style: none; display: flex; flex-wrap: wrap; gap: .6rem; margin: 0; padding: 0; }
+.footer__redes a { display: inline-block; padding: .5rem 1rem; border: 1px solid var(--borde); border-radius: 999px; text-decoration: none; font-size: .9rem; color: var(--texto-suave); transition: color .2s ease, border-color .2s ease; }
+.footer__redes i { margin-right: .35rem; vertical-align: -0.1em; }
+.footer__redes a:hover { color: var(--texto); border-color: var(--violeta); }
+.footer__legal { max-width: 1120px; margin: 1.8rem auto 0; padding-top: 1.2rem; border-top: 1px solid var(--borde); color: var(--texto-suave); font-size: .82rem; text-align: center; }

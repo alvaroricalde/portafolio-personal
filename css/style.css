@@ -1,0 +1,139 @@
+/* ============================================================
+   css/style.css → Base: colores, tipografía, botones, Inicio y Sobre mí
+   Para cambiar los colores de TODA la página, edita las variables de :root
+   ============================================================ */
+:root {
+  --fondo: #0b0b12;
+  --superficie: #14141f;
+  --superficie-2: #1b1b2a;
+  --borde: rgba(255, 255, 255, 0.08);
+  --texto: #e9e9f2;
+  --texto-suave: #a3a3b8;
+  --violeta: #8b5cf6;
+  --celeste: #22d3ee;
+  --degradado: linear-gradient(120deg, var(--violeta), var(--celeste));
+  --radio: 18px;
+  --fuente: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: var(--fuente);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { line-height: 1.15; margin: 0 0 .6em; font-weight: 700; letter-spacing: -0.02em; }
+p { margin: 0 0 1em; }
+:focus-visible { outline: 2px solid var(--celeste); outline-offset: 3px; }
+
+.saltar { position: absolute; left: -999px; top: 8px; background: var(--violeta); color: #fff; padding: 8px 14px; border-radius: 8px; z-index: 200; }
+.saltar:focus { left: 8px; }
+
+.degradado { background: var(--degradado); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.etiqueta { font-family: var(--mono); font-size: .82rem; color: var(--celeste); letter-spacing: .04em; margin-bottom: 1rem; }
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .85rem 1.5rem; min-height: 46px; border-radius: 999px; border: 1px solid transparent;
+  font: 600 .95rem var(--fuente); text-decoration: none; cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+}
+.boton--principal { background: var(--degradado); color: #0b0b12; }
+.boton--principal:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -8px rgba(139, 92, 246, .6); }
+.boton--secundario { background: transparent; color: var(--texto); border-color: var(--borde); }
+.boton--secundario:hover { border-color: var(--celeste); transform: translateY(-2px); }
+.boton--chico { padding: .5rem 1.1rem; min-height: 40px; font-size: .85rem; }
+.boton:disabled { opacity: .7; cursor: not-allowed; transform: none; box-shadow: none; }
+
+/* ---------- Secciones ---------- */
+.seccion { padding: 6rem 1.5rem; max-width: 1120px; margin: 0 auto; }
+.seccion__cabecera { max-width: 640px; margin-bottom: 3rem; }
+.seccion__cabecera h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+.seccion__intro { color: var(--texto-suave); font-size: 1.05rem; }
+
+/* ---------- 01 INICIO ---------- */
+.hero {
+  position: relative; min-height: 100vh; max-width: 1120px; margin: 0 auto;
+  padding: 7rem 1.5rem 4rem; display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; align-items: center;
+}
+.hero__fondo { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.hero__fondo i { position: absolute; width: 46vmax; height: 46vmax; border-radius: 50%; filter: blur(110px); opacity: .22; animation: flotar-fondo 18s ease-in-out infinite alternate; }
+.hero__fondo i:nth-child(1) { background: var(--violeta); top: -18vmax; left: -12vmax; }
+.hero__fondo i:nth-child(2) { background: var(--celeste); bottom: -22vmax; right: -14vmax; animation-delay: -9s; opacity: .14; }
+@keyframes flotar-fondo { to { transform: translate(6vmax, 4vmax) scale(1.1); } }
+
+.hero h1 { font-size: clamp(2.4rem, 6.2vw, 4.4rem); }
+.hero__frase { font-size: clamp(1.1rem, 2vw, 1.35rem); max-width: 34ch; }
+.hero__intereses { color: var(--texto-suave); max-width: 46ch; }
+.hero__botones { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 2rem; }
+
+.hero__visual { position: relative; display: grid; place-items: center; }
+.avatar { position: relative; width: min(320px, 70vw); aspect-ratio: 1; border-radius: 50%; padding: 5px; background: var(--degradado); animation: giro-suave 10s ease-in-out infinite alternate; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; background: var(--superficie); }
+@keyframes giro-suave { to { transform: rotate(6deg) scale(1.02); } }
+
+.chip { position: absolute; font-family: var(--mono); font-size: .85rem; padding: .4rem .9rem; border-radius: 999px; background: var(--superficie-2); border: 1px solid var(--borde); animation: flotar 5s ease-in-out infinite alternate; }
+.chip--1 { top: 6%; left: 2%; color: var(--violeta); }
+.chip--2 { top: 48%; right: -2%; color: var(--celeste); animation-delay: -1.5s; }
+.chip--3 { bottom: 4%; left: 12%; color: var(--texto); animation-delay: -3s; }
+@keyframes flotar { to { transform: translateY(-12px); } }
+
+/* ---------- 02 SOBRE MÍ (bloques "bento") ---------- */
+.bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.tarjeta { background: var(--superficie); border: 1px solid var(--borde); border-radius: var(--radio); padding: 1.8rem; transition: transform .3s ease, border-color .3s ease; }
+.tarjeta:hover { transform: translateY(-4px); border-color: rgba(139, 92, 246, .45); }
+.tarjeta--grande { grid-column: span 2; }
+.tarjeta h3 { font-size: 1.15rem; }
+.tarjeta h3 small { display: block; font: 400 .8rem var(--mono); color: var(--texto-suave); margin-top: .3rem; letter-spacing: 0; }
+.tarjeta p { color: var(--texto-suave); }
+.subtitulo { margin-top: 1.8rem; }
+.lista { list-style: none; margin: 0; padding: 0; color: var(--texto-suave); }
+.lista li { position: relative; padding-left: 1.3rem; margin-bottom: .6rem; }
+.lista li::before { content: "›"; position: absolute; left: 0; color: var(--celeste); font-weight: 700; }
+
+.etiquetas { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: .9rem; }
+.tag { font-family: var(--mono); font-size: .82rem; padding: .35rem .8rem; border-radius: 8px; border: 1px solid; }
+.tag i, .chip i { margin-right: .25rem; font-size: 1.05em; vertical-align: -0.1em; }
+.tag--violeta { color: #c4b0fb; border-color: rgba(139, 92, 246, .5); background: rgba(139, 92, 246, .1); }
+.tag--celeste { color: #7ee8f8; border-color: rgba(34, 211, 238, .4); background: rgba(34, 211, 238, .08); }
+.tag--gris { color: var(--texto-suave); border-color: var(--borde); }
+
+.tarjeta--academica { grid-column: 1 / -1; display: flex; align-items: center; gap: 1.2rem; padding: 1.2rem 1.8rem; }
+.tarjeta--academica p { margin: 0; color: var(--texto); }
+.academica__logo { height: 40px; width: auto; }
+
+/* ---------- Animación de aparición (la activa js/script.js) ---------- */
+.animaciones .aparecer { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.animaciones .aparecer.visible { opacity: 1; transform: none; }
+/* Las tarjetas mantienen su transición de hover cuando ya son visibles */
+.animaciones .tarjeta.aparecer.visible { transition: transform .3s ease, border-color .3s ease, opacity .7s ease; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 6.5rem; min-height: auto; text-align: left; }
+  .hero__visual { order: -1; margin-bottom: 1rem; }
+  .avatar { width: min(240px, 60vw); }
+  .bento { grid-template-columns: 1fr 1fr; }
+  .tarjeta--grande { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .seccion { padding: 4.5rem 1.1rem; }
+  .hero { padding-left: 1.1rem; padding-right: 1.1rem; }
+  .bento { grid-template-columns: 1fr; }
+  .hero__botones .boton { width: 100%; }
+  .tarjeta--academica { flex-direction: column; align-items: flex-start; }
+}
+
+/* Respeta a quienes prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

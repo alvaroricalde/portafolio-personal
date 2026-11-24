@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Álvaro Ricalde | Diseño y Desarrollo de Software</title>
+  <meta name="description" content="Portafolio de Álvaro Ricalde, estudiante de Diseño y Desarrollo de Software en Tecsup. Interesado en backend, bases de datos e inteligencia artificial.">
+  <meta name="theme-color" content="#0b0b12">
+  <!-- Si ya tienes dominio, agrega aquí: <link rel="canonical" href="https://alvaroricalde.com/"> -->
+
+  <!-- Tipografías (Google Fonts). Si no cargan, el navegador usa fuentes del sistema. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Íconos de tecnologías y redes (Devicon). Se usan con <i class="devicon-..."></i>
+       Si no hay internet, simplemente no se ven y el texto sigue funcionando. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+
+  <!-- Estilos: un archivo por parte, como en la clase -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/galeria.css">
+  <link rel="stylesheet" href="css/testimonios.css">
+  <link rel="stylesheet" href="css/contactos.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/subir.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- ==================== MENÚ ====================
+       En móvil se oculta y aparece con el botón ☰ (lo controla js/script.js) -->
+  <header class="menu" id="menu">
+    <a class="menu__logo" href="#inicio" aria-label="Ir al inicio">
+      <span class="menu__marca">&lt;/&gt;</span> Álvaro Ricalde
+    </a>
+    <button class="menu__boton" id="menu-boton" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-lista">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="menu__lista" id="menu-lista">
+        <!-- Cada enlace apunta al id de una sección (#inicio, #sobre-mi...) -->
+        <li><a href="#inicio" class="menu__link">Inicio</a></li>
+        <li><a href="#sobre-mi" class="menu__link">Sobre mí</a></li>
+        <li><a href="#galeria" class="menu__link">Galería</a></li>
+        <li><a href="#testimonios" class="menu__link">Testimonios</a></li>
+        <li><a href="#contacto" class="menu__link menu__link--cta">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ==================== SECCIÓN 01 · INICIO ==================== -->
+    <section class="hero" id="inicio">
+      <div class="hero__fondo" aria-hidden="true"><i></i><i></i></div>
+
+      <div class="hero__texto">
+        <p class="etiqueta aparecer">Estudiante de Diseño y Desarrollo de Software · Tecsup</p>
+        <h1 class="aparecer">Hola, soy <span class="degradado">Álvaro Ricalde</span>.</h1>
+        <!-- Frase personal: cámbiala por la que mejor te represente -->
+        <p class="hero__frase aparecer">Si hay un problema, me gusta sentarme a buscarle la salida. Y si no sé cómo, lo aprendo en el camino.</p>
+        <p class="hero__intereses aparecer">Me mueven el backend, las bases de datos y la inteligencia artificial. Los videojuegos son mi hobby.</p>
+        <div class="hero__botones aparecer">
+          <a href="#sobre-mi" class="boton boton--principal">Conocer más sobre mí</a>
+          <a href="#galeria" class="boton boton--secundario">Explorar la galería</a>
+        </div>
+      </div>
+
+      <div class="hero__visual aparecer">
+        <div class="avatar">
+          <!-- AVATAR: guarda tu foto de GitHub como  img/avatar.png  y se mostrará sola.
+               Mientras no exista, se usa img/avatar.svg (el provisional). -->
+          <img src="img/cute.png" alt="Avatar de Álvaro Ricalde"
+               onerror="this.onerror=null;this.src='img/avatar.svg'" width="320" height="320">
+        </div>
+        <!-- Etiquetas flotantes: solo mis conocimientos reales -->
+        <span class="chip chip--1"><i class="devicon-java-plain" aria-hidden="true"></i> Java</span>
+        <span class="chip chip--2"><i class="devicon-python-plain" aria-hidden="true"></i> Python</span>
+        <span class="chip chip--3"><i class="devicon-mysql-plain" aria-hidden="true"></i> SQL</span>
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 02 · SOBRE MÍ ==================== -->
+    <section class="seccion" id="sobre-mi">
+      <header class="seccion__cabecera aparecer">
+        <p class="etiqueta">02 · Sobre mí</p>
+        <h2>Una persona alegre que aprende haciendo</h2>
+      </header>
+
+      <!-- Bloques tipo "bento": cada tarjeta es un <article class="tarjeta"> -->
+      <div class="bento">
+        <article class="tarjeta tarjeta--grande aparecer">
+          <h3>Quién soy</h3>
+          <p>Soy estudiante de Diseño y Desarrollo de Software en Tecsup, una persona alegre, adaptable y con muchas ganas de aprender. Me gusta enfrentar nuevos retos, buscar soluciones a los problemas y participar en distintas actividades.</p>
+          <p>No quiero limitarme a una sola área: me gusta explorar, probar tecnologías nuevas y ver qué se puede construir con ellas.</p>
+        </article>
+
+        <article class="tarjeta aparecer">
+          <h3>Cómo trabajo</h3>
+          <ul class="lista">
+            <li>Disfruto el trabajo en equipo y compartir ideas.</li>
+            <li>Me adapto rápido a lo que toque.</li>
+            <li>Me preocupo por llevarme bien con los demás.</li>
+          </ul>
+        </article>
+
+        <article class="tarjeta aparecer">
+          <h3>Lo que me gusta hacer</h3>
+          <ul class="lista">
+            <li>Participar en actividades y conversar de todo un poco.</li>
+            <li>Aprender de la gente que me rodea.</li>
+            <li>Programar videojuegos como hobby.</li>
+          </ul>
+        </article>
+
+        <article class="tarjeta tarjeta--grande aparecer">
+          <h3>Lo que ya sé <small>conocimientos actuales</small></h3>
+          <!-- Solo lo que realmente manejo. Sin porcentajes inventados. -->
+          <div class="etiquetas">
+            <span class="tag tag--violeta"><i class="devicon-java-plain" aria-hidden="true"></i> Java</span>
+            <span class="tag tag--violeta"><i class="devicon-python-plain" aria-hidden="true"></i> Python</span>
+            <span class="tag tag--violeta"><i class="devicon-mysql-plain" aria-hidden="true"></i> SQL</span>
+          </div>
+          <h3 class="subtitulo">Lo que quiero explorar <small>en camino, aún no soy experto</small></h3>
+          <div class="etiquetas">
+            <span class="tag tag--celeste"><i class="devicon-nodejs-plain" aria-hidden="true"></i> Backend</span>
+            <span class="tag tag--celeste">Bases de datos</span>
+            <span class="tag tag--celeste">Inteligencia Artificial</span>
+            <span class="tag tag--celeste">Desarrollo de software</span>
+            <span class="tag tag--gris">Videojuegos (hobby)</span>
+          </div>
+        </article>
+
+        <!-- Referencia académica. Si tienes el logo ofifrom
+         cial de Tecsup, guárdalo como img/tecsup-logo.png -->
+        <article class="tarjeta tarjeta--academica aparecer">
+          <img src="img/tecsup-logo.png" alt="Logo de Tecsup" class="academica__logo" height="40"
+               onerror="this.style.display='none'">
+          <p>Estudiante de <strong>Diseño y Desarrollo de Software</strong> — Tecsup</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 03 · GALERÍA ====================
+         Las tarjetas NO se escriben aquí: se generan desde js/data.js
+         (agrega tus proyectos ahí y aparecen solos). -->
+    <section class="seccion" id="galeria">
+      <header class="seccion__cabecera aparecer">
+        <p class="etiqueta">03 · Galería</p>
+        <h2>Explorando, aprendiendo y creando</h2>
+        <p class="seccion__intro">Este espacio irá creciendo con los proyectos, experimentos e ideas que vaya desarrollando en mi camino por la programación.</p>
+      </header>
+      <div class="galeria" id="galeria-grid"></div>
+    </section>
+
+    <!-- ==================== SECCIÓN 04 · TESTIMONIOS ====================
+         También se generan desde js/data.js. Solo testimonios reales. -->
+    <section class="seccion" id="testimonios">
+      <header class="seccion__cabecera aparecer">
+        <p class="etiqueta">04 · Testimonios</p>
+        <h2>Lo que dicen quienes trabajaron conmigo</h2>
+        <p class="seccion__intro">Aquí irán las opiniones de compañeros y docentes. Solo se publicarán testimonios reales, así que este espacio se completará a medida que los reciba.</p>
+      </header>
+      <div class="testimonios" id="testimonios-grid"></div>
+    </section>
+
+    <!-- ==================== SECCIÓN 05 · CONTACTO ==================== -->
+    <section class="seccion" id="contacto">
+      <header class="seccion__cabecera aparecer">
+        <p class="etiqueta">05 · Contacto</p>
+        <h2>Conversemos</h2>
+        <p class="seccion__intro">¿Una idea, una duda o ganas de trabajar en equipo? Escríbeme y te respondo.</p>
+      </header>
+
+      <div class="contacto">
+        <div class="contacto__info aparecer">
+          <h3>También me encuentras aquí</h3>
+          <ul class="contacto__enlaces">
+            <li><a href="mailto:alvaro.ricalde@tecsup.edu.pe"><span class="enlace__txt"><svg class="icono-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> alvaro.ricalde@tecsup.edu.pe</span></a></li>
+            <li><a href="https://github.com/alvaroricalde" target="_blank" rel="noopener noreferrer"><span class="enlace__txt"><i class="devicon-github-original" aria-hidden="true"></i> GitHub · alvaroricalde</span></a></li>
+            <li><a href="https://www.linkedin.com/in/alvaro-ricalde-villanueva-936446412/" target="_blank" rel="noopener noreferrer"><span class="enlace__txt"><i class="devicon-linkedin-plain" aria-hidden="true"></i> LinkedIn · Álvaro Ricalde</span></a></li>
+            <li><a href="https://www.instagram.com/jhoacin" target="_blank" rel="noopener noreferrer"><span class="enlace__txt"><i class="devicon-instagram-plain" aria-hidden="true"></i> Instagram · jhoacin</span></a></li>
+          </ul>
+        </div>
+
+        <!-- El formulario se envía a la ruta /validar de index.js (método POST).
+             Los "name" de cada campo deben coincidir con los que lee index.js: NO los cambies.
+             novalidate: la validación la hace js/formulario.js, con mensajes propios. -->
+        <form class="formulario aparecer" id="form-contacto" action="/validar" method="post" novalidate>
+          <div class="formulario__fila">
+            <div class="campo">
+              <label for="nombres">Nombres</label>
+              <input type="text" id="nombres" name="nombres" maxlength="100" autocomplete="given-name" required>
+              <small class="campo__error" data-error-de="nombres"></small>
+            </div>
+            <div class="campo">
+              <label for="apellidos">Apellidos</label>
+              <input type="text" id="apellidos" name="apellidos" maxlength="100" autocomplete="family-name" required>
+              <small class="campo__error" data-error-de="apellidos"></small>
+            </div>
+          </div>
+
+          <div class="formulario__fila">
+            <div class="campo">
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" name="correo" maxlength="150" autocomplete="email" required>
+              <small class="campo__error" data-error-de="correo"></small>
+            </div>
+            <div class="campo">
+              <label for="celular">Celular <span class="opcional">(opcional)</span></label>
+              <input type="tel" id="celular" name="celular" maxlength="20" autocomplete="tel">
+              <small class="campo__error" data-error-de="celular"></small>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" name="asunto" maxlength="150" required>
+            <small class="campo__error" data-error-de="asunto"></small>
+          </div>
+
+          <div class="campo">
+            <label for="comentarios">Mensaje</label>
+            <textarea id="comentarios" name="comentarios" rows="5" maxlength="2000" required></textarea>
+            <small class="campo__contador"><span id="contador">0</span> / 2000</small>
+            <small class="campo__error" data-error-de="comentarios"></small>
+          </div>
+
+          <button type="submit" class="boton boton--principal" id="btn-enviar">
+            <span class="btn__texto">Enviar mensaje</span>
+            <span class="btn__cargando" aria-hidden="true"></span>
+          </button>
+
+          <!-- Aquí se muestra el éxito o el error del envío -->
+          <p class="formulario__estado" id="estado-form" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer__contenido">
+      <div>
+        <p class="footer__nombre">Álvaro Ricalde</p>
+        <p class="footer__sub">Estudiante de Diseño y Desarrollo de Software — Tecsup</p>
+      </div>
+      <ul class="footer__redes">
+        <li><a href="https://github.com/alvaroricalde" target="_blank" rel="noopener noreferrer"><i class="devicon-github-original" aria-hidden="true"></i> GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/alvaro-ricalde-villanueva-936446412/" target="_blank" rel="noopener noreferrer"><i class="devicon-linkedin-plain" aria-hidden="true"></i> LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/jhoacin" target="_blank" rel="noopener noreferrer"><i class="devicon-instagram-plain" aria-hidden="true"></i> Instagram</a></li>
+      </ul>
+    </div>
+    <p class="footer__legal">
+      © <span id="anio">2026</span> Álvaro Ricalde. Todos los derechos reservados.
+      · Diseñado y desarrollado por Álvaro Ricalde.
+    </p>
+  </footer>
+
+  <!-- Botón para volver arriba -->
+  <a href="#inicio" class="subir" id="subir" aria-label="Volver arriba">↑</a>
+
+  <!-- Scripts: data.js primero (contiene tus datos), luego los demás -->
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/formulario.js"></script>
+</body>
+</html>

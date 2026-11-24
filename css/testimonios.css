@@ -1,0 +1,20 @@
+/* ============================================================
+   css/testimonios.css → Tarjetas de testimonios (desde js/data.js)
+   ============================================================ */
+.testimonios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
+
+.testimonio { position: relative; margin: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 1.4rem; padding: 2rem 1.8rem 1.6rem; background: var(--superficie); border: 1px solid var(--borde); border-radius: var(--radio); transition: transform .3s ease, border-color .3s ease; }
+.testimonio:hover { transform: translateY(-4px); border-color: rgba(139, 92, 246, .45); }
+.testimonio__comillas { position: absolute; top: .4rem; left: 1.3rem; font: 700 4rem/1 var(--fuente); background: var(--degradado); -webkit-background-clip: text; background-clip: text; color: transparent; opacity: .7; }
+.testimonio blockquote { margin: 1.6rem 0 0; color: var(--texto); font-size: 1.02rem; }
+
+.testimonio__autor { display: flex; align-items: center; gap: .9rem; }
+.testimonio__autor strong { display: block; font-size: .95rem; }
+.testimonio__autor span:not(.testimonio__inicial) { color: var(--texto-suave); font-size: .85rem; }
+.testimonio__foto, .testimonio__inicial { width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0; object-fit: cover; }
+.testimonio__inicial { display: grid; place-items: center; font-weight: 700; background: var(--superficie-2); border: 1px solid var(--borde); color: var(--celeste); }
+
+/* Espacio reservado */
+.testimonio--vacio { border-style: dashed; border-color: rgba(139, 92, 246, .35); }
+.testimonio--vacio blockquote { color: var(--texto-suave); font-style: italic; }
+.testimonio--vacio .testimonio__comillas { opacity: .35; }

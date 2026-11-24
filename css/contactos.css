@@ -1,0 +1,51 @@
+/* ============================================================
+   css/contactos.css → Sección de contacto y formulario
+   ============================================================ */
+.contacto { display: grid; grid-template-columns: .8fr 1.2fr; gap: 2.5rem; align-items: start; }
+
+.contacto__info h3 { font-size: 1.15rem; }
+.contacto__enlaces { list-style: none; margin: 0; padding: 0; }
+.contacto__enlaces li { border-bottom: 1px solid var(--borde); }
+.contacto__enlaces a { display: flex; justify-content: space-between; align-items: center; padding: .95rem 0; color: var(--texto-suave); text-decoration: none; word-break: break-word; transition: color .2s ease, padding-left .2s ease; }
+.enlace__txt { display: inline-flex; align-items: center; gap: .7rem; }
+.enlace__txt i, .icono-svg { font-size: 1.25rem; width: 1.25rem; height: 1.25rem; color: var(--violeta); flex-shrink: 0; }
+.contacto__enlaces a::after { content: "↗"; color: var(--celeste); margin-left: .8rem; }
+.contacto__enlaces a:hover { color: var(--texto); padding-left: .4rem; }
+
+.formulario { background: var(--superficie); border: 1px solid var(--borde); border-radius: var(--radio); padding: 2rem; }
+.formulario__fila { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.campo { margin-bottom: 1.1rem; display: flex; flex-direction: column; }
+.campo label { font-size: .88rem; margin-bottom: .4rem; color: var(--texto); }
+.opcional { color: var(--texto-suave); font-size: .8rem; }
+
+.campo input, .campo textarea {
+  width: 100%; padding: .8rem 1rem; min-height: 46px; border-radius: 12px;
+  background: var(--fondo); color: var(--texto); border: 1px solid var(--borde);
+  font: 400 1rem var(--fuente); transition: border-color .2s ease, box-shadow .2s ease;
+}
+.campo textarea { resize: vertical; min-height: 130px; }
+.campo input:focus, .campo textarea:focus { outline: none; border-color: var(--celeste); box-shadow: 0 0 0 3px rgba(34, 211, 238, .15); }
+.campo input.invalido, .campo textarea.invalido { border-color: #f87171; }
+.campo__error { color: #fca5a5; font-size: .82rem; min-height: 1.1em; margin-top: .3rem; }
+.campo__contador { align-self: flex-end; color: var(--texto-suave); font: .75rem var(--mono); margin-top: .3rem; }
+
+/* Campo trampa para bots: fuera de la pantalla, no usar display:none */
+.trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.formulario .boton { width: 100%; margin-top: .4rem; position: relative; }
+.btn__cargando { display: none; width: 18px; height: 18px; border: 2px solid rgba(11, 11, 18, .3); border-top-color: #0b0b12; border-radius: 50%; animation: girar .7s linear infinite; }
+.boton.cargando .btn__cargando { display: inline-block; }
+@keyframes girar { to { transform: rotate(360deg); } }
+
+.formulario__estado { margin: 1rem 0 0; padding: 0; font-size: .95rem; border-radius: 12px; }
+.formulario__estado--exito, .formulario__estado--error { padding: .9rem 1.1rem; }
+.formulario__estado--exito { background: rgba(34, 197, 94, .12); border: 1px solid rgba(34, 197, 94, .4); color: #86efac; }
+.formulario__estado--error { background: rgba(248, 113, 113, .1); border: 1px solid rgba(248, 113, 113, .4); color: #fca5a5; }
+
+@media (max-width: 860px) {
+  .contacto { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .formulario { padding: 1.4rem 1.1rem; }
+  .formulario__fila { grid-template-columns: 1fr; gap: 0; }
+}
